@@ -12,4 +12,8 @@ Use the following command to generate 50 images containing three gabor patches e
 
 
 
+![](images/grayscale/gabor3_000018.png)
+
+
+
 [1] V. Mnih, N. Heess, A. Graves, and K. Kavukcuoglu, "Recurrent models of visual attention", 2014, http://arxiv.org/abs/1406.6247
