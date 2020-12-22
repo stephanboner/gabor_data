@@ -45,6 +45,10 @@ def get_args():
 
     phase : float
         phase offset of the grating, between 0 and 180
+
+    trim : float
+        used to cut the gaussian at some point
+        preventing it from continuing infinitely
 """
 
 
@@ -135,7 +139,7 @@ def generate_noisy_image(n_gabor_patches, n_noise_patches, image_height):
 
 if __name__ == '__main__':
     FLAGS = get_args()
-    number_images = FLAGS.n_images
+    n_images = FLAGS.n_images
     n_gabor_patches = FLAGS.n_gabor_patches
     n_noise_patches = FLAGS.n_noise_patches
     output_path = FLAGS.output_path
@@ -148,7 +152,7 @@ if __name__ == '__main__':
         columns.append("orientation_%d" % i)
     df = pd.DataFrame(columns=columns)
 
-    for i in range(0, number_images):
+    for i in range(0, n_images):
         img, orientations = generate_noisy_image(
             n_gabor_patches, n_noise_patches, image_height)
         img_name = ("gabor%d_%06d.png" % (n_gabor_patches, i))
